@@ -6,10 +6,14 @@
 </head>
 <body>
     <h2> Hyper news</h2>
-    <h4>2020-02-02</h4>
-    <ul>
-      <li><a href="/news/9234732/">The birth of the star</a></li>
-      <li><a href="/news/2389742/">The raise of Jupyter</a></li>
-    </ul>
+    {% for group in groups %}
+        <h4>{{ group.0.created | slice:-9 }}</h4>
+        <ul>
+            {% for article in group %}
+          <li><a href="/news/{{ article.link }}/">{{ article.title }}</a></li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+<a target="_blank" href="/news/create/">Create new Page</a>
 </body>
 </html>
