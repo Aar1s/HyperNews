@@ -5,7 +5,7 @@
     <title>Create news</title>
 </head>
 <body>
-<form action="[value]" method="POST">
+<form method="POST">{% csrf_token %}
     <p>Enter Title:</p>
     <input type="text" size="35" name="title">
     <p>Enter Text:</p>
