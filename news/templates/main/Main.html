@@ -5,6 +5,9 @@
     <title>Main page</title>
 </head>
 <body>
+    <form method="GET">{% csrf_token %}
+        <button type="submit">Submit news</button>
+    </form>
     <h2> Hyper news</h2>
     {% for group in groups %}
         <h4>{{ group.0.created | slice:-9 }}</h4>
